@@ -15,7 +15,10 @@
   users.users.${vars.username} = {
     isNormalUser = true;
     description = vars.username;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     # openssh.authorizedKeys.keys = [
     #   vars.sshPublicKeyPersonal
     # ];
@@ -40,9 +43,9 @@
     };
     settings = {
       experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+        "nix-command"
+        "flakes"
+      ];
       auto-optimise-store = true;
     };
   };
