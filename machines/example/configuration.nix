@@ -19,6 +19,7 @@
 
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/bootloader.nix
+    ./../../modules/nixos/docker.nix
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
