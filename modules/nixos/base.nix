@@ -12,6 +12,17 @@
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
+  users.users.${vars.username} = {
+    isNormalUser = true;
+    description = vars.username;
+    extraGroups = ["networkmanager" "wheel"];
+    # openssh.authorizedKeys.keys = [
+    #   vars.sshPublicKeyPersonal
+    # ];
+    # shell = pkgs.zsh;
+    # hashedPasswordFile = config.sops.secrets."user-password".path;
+  };
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 

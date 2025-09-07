@@ -3,6 +3,8 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
+  inputs,
+  outputs,
   config,
   pkgs,
   vars,
@@ -11,7 +13,8 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
+    inputs.home-manager.nixosModules.home-manager
+
     ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
@@ -43,20 +46,35 @@
     variant = "";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users = {
-    ${vars.username} = {
-      isNormalUser = true;
-      # description = "Kaj";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-      packages = with pkgs; [
-        mergerfs
-        snapraid
-        neovim
-      ];
+  # # Define a user account. Don't forget to set a password with ‘passwd’.
+  # users.users = {
+  #   ${vars.username} = {
+  #     isNormalUser = true;
+  #     # description = "Kaj";
+  #     extraGroups = [
+  #       "networkmanager"
+  #       "wheel"
+  #     ];
+  #     packages = with pkgs; [
+  #       mergerfs
+  #       snapraid
+  #       neovim
+  #     ];
+  #     imports = [];
+  #   };
+  # };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs vars; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users = {
+      ${vars.username} = {
+        imports = [
+          ./../../modules/home-manager/base.nix
+          # ./../../modules/home-manager/git.nix
+        ];
+      };
     };
   };
 
