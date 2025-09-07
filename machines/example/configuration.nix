@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  vars,
+  ...
+}:
 
 {
   imports = [
@@ -39,18 +44,20 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kaj = {
-    isNormalUser = true;
-    description = "Kaj";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = with pkgs; [
-      mergerfs
-      snapraid
-      neovim
-    ];
+  users.users = {
+    ${vars.username} = {
+      isNormalUser = true;
+      # description = "Kaj";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      packages = with pkgs; [
+        mergerfs
+        snapraid
+        neovim
+      ];
+    };
   };
 
   # List packages installed in system profile. To search, run:
