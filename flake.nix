@@ -26,6 +26,7 @@
     {
       nixosConfigurations = {
         example = mkNixOSConfig ./machines/example/configuration.nix;
+        framework = mkNixOSConfig ./machines/framework/configuration.nix;
       };
     };
 }
