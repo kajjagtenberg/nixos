@@ -20,6 +20,7 @@
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/bootloader.nix
     ./../../modules/nixos/docker.nix
+    ./../../modules/nixos/gnome.nix
   ];
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -56,6 +57,7 @@
         imports = [
           ./../../modules/home-manager/base.nix
           ./../../modules/home-manager/git.nix
+          ./../../modules/home-manager/desktop.nix
         ];
       };
     };
