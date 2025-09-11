@@ -14,6 +14,7 @@
     ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
+    ./../../modules/nixos/wired.nix
     ./../../modules/nixos/bootloader.nix
     ./../../modules/nixos/docker.nix
     ./../../modules/nixos/gnome.nix
