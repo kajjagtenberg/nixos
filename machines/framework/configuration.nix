@@ -11,7 +11,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
 
-    # ./hardware-configuration.nix
+    ../example/hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/bootloader.nix
