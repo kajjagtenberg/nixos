@@ -17,7 +17,7 @@
     ./../../modules/nixos/bootloader.nix
     ./../../modules/nixos/docker.nix
     ./../../modules/nixos/gnome.nix
-    # ./../../modules/nixos/wireless.nix TODO: enable for after hardware-configuration is generated
+    ./../../modules/nixos/laptop.nix
   ];
 
   home-manager = {
