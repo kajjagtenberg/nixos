@@ -9,7 +9,7 @@
       wget
       ripgrep
       nixfmt
-      exa
+      eza
       bat
       gcc
     ];
