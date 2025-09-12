@@ -6,6 +6,7 @@
 
   imports = [
     # ./wireless.nix  TODO: enable for after hardware-configuration is generated
+    ./fingerprint.nix
   ];
 
   # Recent kernel
