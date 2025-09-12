@@ -9,6 +9,7 @@
       wget
       ripgrep
       nixfmt
+      alacritty
     ];
   };
 }
