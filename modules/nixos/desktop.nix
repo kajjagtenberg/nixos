@@ -4,5 +4,5 @@
   ...
 }:
 {
-  fonts.packages = with pkgs; [ nerdfonts ];
+  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 }
