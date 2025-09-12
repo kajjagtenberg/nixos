@@ -29,6 +29,9 @@
       shellAliases = {
         rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
       };
+      bashrcExtra = ''
+        eval "$(starship init bash)"
+      '';
     };
   };
 
