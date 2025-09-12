@@ -11,7 +11,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
 
-    ../example/hardware-configuration.nix
+    ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
     ./../../modules/nixos/systemd-boot.nix
