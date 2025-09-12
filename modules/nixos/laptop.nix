@@ -1,12 +1,13 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
 
   imports = [
     # ./wireless.nix  TODO: enable for after hardware-configuration is generated
   ];
-  
+
   # Recent kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
