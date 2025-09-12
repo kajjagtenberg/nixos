@@ -9,6 +9,9 @@
       wget
       ripgrep
       nixfmt
+      exa
+      bat
+      gcc
     ];
   };
 }
