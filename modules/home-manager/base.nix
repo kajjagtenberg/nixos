@@ -24,6 +24,12 @@
     htop.enable = true;
     vim.enable = true;
     fzf.enable = true;
+    bash = {
+      enable = true;
+      shellAliases = {
+        rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
+      };
+    };
   };
 
 }
