@@ -28,6 +28,9 @@
       enable = true;
       shellAliases = {
         rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
+        ga = "git add .";
+        gc = "git commit -m ";
+        gp = "git push";
       };
       bashrcExtra = ''
         eval "$(starship init bash)"
