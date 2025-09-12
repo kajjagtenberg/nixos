@@ -10,6 +10,7 @@
       ripgrep
       nixfmt
       alacritty
+      starship
     ];
   };
 }
