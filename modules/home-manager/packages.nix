@@ -9,8 +9,6 @@
       wget
       ripgrep
       nixfmt
-      alacritty
-      starship
     ];
   };
 }
