@@ -37,5 +37,5 @@
     };
   };
 
-  networking.hostName = "nixos";
+  networking.hostName = "framework";
 }
