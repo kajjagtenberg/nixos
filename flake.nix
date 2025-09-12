@@ -28,6 +28,8 @@
         example = mkNixOSConfig ./machines/example/configuration.nix;
         framework = mkNixOSConfig ./machines/framework/configuration.nix;
         swrm1 = mkNixOSConfig ./machines/swrm1/configuration.nix;
+        swrm2 = mkNixOSConfig ./machines/swrm2/configuration.nix;
+        swrm3 = mkNixOSConfig ./machines/swrm3/configuration.nix;
       };
     };
 }
