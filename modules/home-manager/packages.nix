@@ -8,6 +8,7 @@
       curl
       wget
       ripgrep
+      nixfmt
     ];
   };
 }
