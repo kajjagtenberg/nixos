@@ -14,7 +14,7 @@
     ../example/hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
-    ./../../modules/nixos/bootloader.nix
+    ./../../modules/nixos/systemd-boot.nix
     ./../../modules/nixos/docker.nix
     ./../../modules/nixos/gnome.nix
     ./../../modules/nixos/hyprland.nix
