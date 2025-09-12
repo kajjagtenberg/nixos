@@ -18,6 +18,7 @@
     ./../../modules/nixos/bootloader.nix
     ./../../modules/nixos/docker.nix
     ./../../modules/nixos/gnome.nix
+    ./../../modules/nixos/auto-update.nix
   ];
 
   home-manager = {
