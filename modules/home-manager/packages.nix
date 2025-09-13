@@ -14,6 +14,7 @@
       gcc
       dig
       dogdns
+      fastfetch
     ];
   };
 }
