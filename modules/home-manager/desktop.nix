@@ -20,6 +20,7 @@ in
   home.packages = with pkgs; [
     protonvpn-cli
     spotify
+    parsec-bin
   ];
 
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
