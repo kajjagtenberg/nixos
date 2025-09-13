@@ -19,6 +19,7 @@ in
 
   home.packages = with pkgs; [
     protonvpn-cli
+    spotify
   ];
 
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
