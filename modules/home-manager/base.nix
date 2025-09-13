@@ -24,6 +24,7 @@
     htop.enable = true;
     vim.enable = true;
     fzf.enable = true;
+    starship.enable = true;
     bash = {
       enable = true;
       shellAliases = {
