@@ -20,6 +20,7 @@
       zoxide
       xh
       du-dust
+      fselect
     ];
   };
 }
