@@ -17,7 +17,7 @@
     ./../../modules/nixos/wired.nix
     ./../../modules/nixos/bootloader.nix
     ./../../modules/nixos/docker.nix
-    ./../../modules/nixos/nifs/docker.nix
+    ./../../modules/nixos/nfs/docker.nix
   ];
 
   home-manager = {
