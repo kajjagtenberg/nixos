@@ -12,6 +12,7 @@
       eza
       bat
       gcc
+      dig
     ];
   };
 }
