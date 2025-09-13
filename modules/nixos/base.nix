@@ -29,6 +29,9 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  networking.firewall.allowedTCPPorts = [
+    22
+  ];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "nl_NL.UTF-8";
