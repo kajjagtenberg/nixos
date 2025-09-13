@@ -156,7 +156,7 @@ in
           x = 4;
           y = 4;
         };
-        opacity = 0.65;
+        opacity = 0.75;
       };
 
       font = {
