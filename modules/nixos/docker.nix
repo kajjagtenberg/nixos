@@ -10,8 +10,4 @@
       "docker"
     ];
   };
-
-  networking.firewall.allowedTCPPorts = [
-    2377
-  ];
 }
