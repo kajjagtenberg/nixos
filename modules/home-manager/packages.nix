@@ -17,6 +17,7 @@
       fastfetch
       lazygit
       lazydocker
+      zoxide
     ];
   };
 }
