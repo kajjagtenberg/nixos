@@ -42,7 +42,8 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  networking.firewall.enable = false;
+  # networking.firewall.enable = false;
+  networking.firewall.trustedInterfaces = [ "docker0" ];
   networking.firewall.allowedTCPPorts = [
     22
   ];
