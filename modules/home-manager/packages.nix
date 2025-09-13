@@ -19,6 +19,7 @@
       lazydocker
       zoxide
       xh
+      du-dust
     ];
   };
 }
