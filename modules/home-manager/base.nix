@@ -31,6 +31,10 @@
         ga = "git add .";
         gc = "git commit -m ";
         gp = "git push";
+        ls = "eza";
+        ll = "ls -lha";
+        cat = "bat --style=plain --theme=base16 --paging=never ";
+        ".." = "cd ..";
       };
       bashrcExtra = ''
         eval "$(starship init bash)"
