@@ -21,6 +21,7 @@
       xh
       du-dust
       fselect
+      tokei
     ];
   };
 }
