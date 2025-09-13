@@ -13,6 +13,7 @@
       bat
       gcc
       dig
+      dogdns
     ];
   };
 }
