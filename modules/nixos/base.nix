@@ -16,9 +16,7 @@
       "networkmanager"
       "wheel"
     ];
-    # openssh.authorizedKeys.keys = [
-    #   vars.sshPublicKeyPersonal
-    # ];
+    openssh.authorizedKeys.keys = vars.sshPublicKeyPersonal;
     # shell = pkgs.zsh;
     # hashedPasswordFile = config.sops.secrets."user-password".path;
   };
