@@ -49,6 +49,10 @@
     22
   ];
 
+  environment.systemPackages = with pkgs; [
+    nfs-utils
+  ];
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "nl_NL.UTF-8";
     LC_IDENTIFICATION = "nl_NL.UTF-8";
