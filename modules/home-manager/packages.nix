@@ -16,6 +16,7 @@
       dogdns
       fastfetch
       lazygit
+      lazydocker
     ];
   };
 }
