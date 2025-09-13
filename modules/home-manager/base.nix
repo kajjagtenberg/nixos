@@ -28,7 +28,7 @@
     bash = {
       enable = true;
       shellAliases = {
-        rebuild = "sudo nixos-rebuild switch --flake ~/nixos";
+        rebuild = "sudo nixos-rebuild switch --flake github:kajjagtenberg/nixos";
         ga = "git add .";
         gc = "git commit -m ";
         gp = "git push";
