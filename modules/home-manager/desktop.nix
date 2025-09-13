@@ -21,6 +21,7 @@ in
     protonvpn-cli
     spotify
     parsec-bin
+    protonmail-desktop
   ];
 
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
