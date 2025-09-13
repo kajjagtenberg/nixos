@@ -17,6 +17,7 @@
     ./../../modules/nixos/wired.nix
     ./../../modules/nixos/bootloader.nix
     ./../../modules/nixos/docker.nix
+    ./../../modules/nixos/nifs/docker.nix
   ];
 
   home-manager = {
@@ -31,15 +32,6 @@
         ];
       };
     };
-  };
-
-  fileSystems."/mnt/data" = {
-    device = "10.0.0.94:/mnt/fast/k8s";
-    fsType = "nfs";
-    options = [
-      "rw"
-      "vers=4"
-    ];
   };
 
   networking.hostName = "swrm1";
