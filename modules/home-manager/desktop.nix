@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 let
   lock-false = {
     Value = false;
@@ -12,8 +8,7 @@ let
     Value = true;
     Status = "locked";
   };
-in
-{
+in {
   programs.vscode.enable = true;
   programs.neovim.enable = true;
 
@@ -24,14 +19,11 @@ in
     protonmail-desktop
   ];
 
-
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
   programs = {
     firefox = {
       enable = true;
-      languagePacks = [
-        "en-US"
-      ];
+      languagePacks = [ "en-US" ];
 
       # ---- POLICIES ----
       # Check about:policies#documentation for options.
@@ -52,7 +44,8 @@ in
         OverridePostUpdatePage = "";
         DontCheckDefaultBrowser = true;
         DisplayBookmarksToolbar = "never"; # alternatives: "always" or "newtab"
-        DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
+        DisplayMenuBar =
+          "default-off"; # alternatives: "always", "never" or "default-on"
         SearchBar = "unified"; # alternative: "separate"
 
         # ---- EXTENSIONS ----
@@ -93,15 +86,22 @@ in
           "browser.search.suggest.enabled.private" = lock-false;
           "browser.urlbar.suggest.searches" = lock-false;
           "browser.urlbar.showSearchSuggestionsFirst" = lock-false;
-          "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
+          "browser.newtabpage.activity-stream.feeds.section.topstories" =
+            lock-false;
           "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includePocket" =
+            lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" =
+            lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" =
+            lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeVisited" =
+            lock-false;
           "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-          "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+          "browser.newtabpage.activity-stream.system.showSponsored" =
+            lock-false;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" =
+            lock-false;
         };
       };
     };
@@ -152,9 +152,7 @@ in
           lines = 30;
           columns = 150;
         };
-        decorations = lib.mkMerge [
-          "Full"
-        ];
+        decorations = lib.mkMerge [ "Full" ];
         dynamic_padding = true;
         padding = {
           x = 4;
@@ -164,9 +162,7 @@ in
       };
 
       font = {
-        size = lib.mkMerge [
-          14
-        ];
+        size = lib.mkMerge [ 14 ];
         normal = {
           family = "JetBrainsMono Nerd Font";
           style = "Regular";
@@ -174,13 +170,11 @@ in
       };
 
       keyboard = {
-        bindings = [
-          {
-            key = "Return";
-            mods = "Shift";
-            chars = "\n";
-          }
-        ];
+        bindings = [{
+          key = "Return";
+          mods = "Shift";
+          chars = "\n";
+        }];
       };
     };
   };

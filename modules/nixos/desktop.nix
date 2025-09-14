@@ -1,9 +1,4 @@
-{
-  pkgs,
-  vars,
-  ...
-}:
-{
+{ pkgs, vars, ... }: {
   fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
   programs.steam.enable = true;

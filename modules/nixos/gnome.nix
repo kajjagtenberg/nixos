@@ -1,11 +1,5 @@
-{
-  pkgs,
-  ...
-}:
-{
-  imports = [
-    ./desktop.nix
-  ];
+{ pkgs, ... }: {
+  imports = [ ./desktop.nix ];
 
   services.xserver = {
     enable = true;

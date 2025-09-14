@@ -1,11 +1,5 @@
-{
-  vars,
-  ...
-}:
-{
-  imports = [
-    ./packages.nix
-  ];
+{ vars, ... }: {
+  imports = [ ./packages.nix ];
 
   home = {
     username = vars.username;
@@ -29,7 +23,8 @@
     bash = {
       enable = true;
       shellAliases = {
-        rebuild = "sudo nixos-rebuild switch --flake github:kajjagtenberg/nixos --refresh";
+        rebuild =
+          "sudo nixos-rebuild switch --flake github:kajjagtenberg/nixos --refresh";
         ga = "git add .";
         gc = "git commit -m ";
         gp = "git push";

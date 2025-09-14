@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+{ ... }: {
   programs.hyprland.enable = true;
 
   # TODO: Check if these packages are necessary
