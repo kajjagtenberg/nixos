@@ -14,6 +14,7 @@ in {
 
   home.packages = with pkgs; [
     protonvpn-cli
+    protonvpn-app
     spotify
     parsec-bin
     protonmail-desktop
