@@ -19,6 +19,7 @@ in {
     parsec-bin
     protonmail-desktop
     brave
+    flyctl
   ];
 
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
