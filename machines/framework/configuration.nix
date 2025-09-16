@@ -13,6 +13,7 @@
     ./../../modules/nixos/hyprland.nix
     ./../../modules/nixos/laptop.nix
     ./../../modules/nixos/auto-update.nix
+    ./../../modules/nixos/rocm.nix
   ];
 
   home-manager = {
