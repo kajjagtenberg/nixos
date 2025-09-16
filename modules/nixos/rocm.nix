@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   hardware.amdgpu.opencl.enable = true;
   hardware.opengl = {
     enable = true;
