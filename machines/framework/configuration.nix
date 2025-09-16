@@ -14,6 +14,7 @@
     ./../../modules/nixos/laptop.nix
     ./../../modules/nixos/auto-update.nix
     ./../../modules/nixos/rocm.nix
+    ./../../modules/nixos/netbird.nix
   ];
 
   home-manager = {

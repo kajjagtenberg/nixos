@@ -11,7 +11,7 @@
     ./../../modules/nixos/bootloader.nix
     ./../../modules/nixos/docker.nix
     ./../../modules/nixos/nfs/docker.nix
-    ./../../modules/nixos/nfs/netbird.nix
+    ./../../modules/nixos/netbird.nix
   ];
 
   home-manager = {
