@@ -10,6 +10,4 @@
       rocminfo
     ];
   };
-
-  services.rocm.enable = true;
 }
