@@ -33,7 +33,7 @@
   networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = [ 22 ];
 
-  environment.systemPackages = with pkgs; [ nfs-utils ];
+  environment.systemPackages = with pkgs; [ nfs-utils pciutils ];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "nl_NL.UTF-8";
