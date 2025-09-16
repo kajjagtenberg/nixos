@@ -3,10 +3,8 @@
   hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
-      rocm-opencl-icd
-      rocm-opencl-runtime
-      rocm-smi
-      rocminfo
+      rocmPackages.rocm-smi
+      rocmPackages.rocminfo
     ];
   };
 }
