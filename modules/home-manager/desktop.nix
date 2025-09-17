@@ -11,6 +11,14 @@ let
 in {
   programs.vscode.enable = true;
   programs.neovim.enable = true;
+  programs.tmux.enable = true;
+
+  home.file.".tmux.conf".source = pkgs.fetchFromGitHub {
+    owner = "kajjagtenberg";
+    repo = "tmux";
+    rev = "d13ecfe";
+    # sha256 = "sha256-hash-of-the-repo";
+  } + "/tmux.conf";
 
   home.packages = with pkgs; [
     protonvpn-cli
