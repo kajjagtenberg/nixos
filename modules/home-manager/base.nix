@@ -34,6 +34,17 @@
         ".." = "cd ..";
       };
       bashrcExtra = ''
+        # --- Scratchpad Neovim (Ctrl+n) ---
+        open_nvim_scratchpad() {
+          nvim
+        }
+        bind -x '"\C-n":open_nvim_scratchpad'
+
+        # --- Edit current command buffer in Neovim (Ctrl+o) ---
+        export EDITOR=nvim
+        export VISUAL=nvim
+        bind '"\C-o": edit-and-execute-command'
+
         eval "$(starship init bash)"
         eval "$(zoxide init bash)"
       '';
