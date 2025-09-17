@@ -11,7 +11,6 @@ let
 in {
   programs.vscode.enable = true;
   programs.neovim.enable = true;
-  programs.tmux.enable = true;
 
   home.file.".tmux.conf".source = pkgs.fetchFromGitHub {
     owner = "kajjagtenberg";
@@ -20,16 +19,18 @@ in {
     sha256 = "sha256-O3yHOWlXKvJL+wToO53kSZK09BNGRRx7dk3blMpETXs=";
   } + "/tmux.conf";
 
-  # This ensures TPM itself and all plugins get installed
-  plugins = with pkgs.tmuxPlugins; [
-    sensible
-    yank
-    vim-tmux-navigator
-    {
-      plugin = catppuccin;
-      extraConfig = ''set -g @catppuccin_flavour "mocha"'';
-    }
-  ];
+  programs.tmux = {
+    enable = true;
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      yank
+      vim-tmux-navigator
+      {
+        plugin = catppuccin;
+        extraConfig = ''set -g @catppuccin_flavour "mocha"'';
+      }
+    ];
+  };
 
   home.packages = with pkgs; [
     protonvpn-cli
