@@ -17,7 +17,7 @@ in {
     owner = "kajjagtenberg";
     repo = "tmux";
     rev = "d13ecfe";
-    # sha256 = "sha256-hash-of-the-repo";
+    sha256 = "sha256-O3yHOWlXKvJL+wToO53kSZK09BNGRRx7dk3blMpETXs=";
   } + "/tmux.conf";
 
   home.packages = with pkgs; [
