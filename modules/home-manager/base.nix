@@ -45,6 +45,15 @@
         export VISUAL=nvim
         bind '"\C-o": edit-and-execute-command'
 
+        # Fuzzy search previous command output
+        fzf_last_output() {
+          # Re-run the last command, capture output, pipe to fzf
+          fc -nl -1 | bash | fzf
+        }
+
+        # Bind it to Ctrl+f
+        bind -x '"\C-f":fzf_last_output'
+
         eval "$(starship init bash)"
         eval "$(zoxide init bash)"
       '';
