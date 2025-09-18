@@ -22,7 +22,6 @@
       spotify
       parsec-bin
       protonmail-desktop
-      brave
       flyctl
 
       wl-clipboard
