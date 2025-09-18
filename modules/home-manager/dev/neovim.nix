@@ -1,4 +1,7 @@
 {
+  lib,
+  pkgs,
+  config,
   ...
 }:
 {
@@ -10,10 +13,11 @@
       enable = true;
       vimAlias = true; # make `vim` point to `nvim`
       viAlias = true; # make `vi` point to `nvim`
-      extraPackages = with pkgs; [
-        fzf
-        ripgrep
-      ];
     };
+
+    home.packages = with pkgs; [
+      fzf
+      ripgrep
+    ];
   };
 }

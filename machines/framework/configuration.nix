@@ -1,4 +1,11 @@
-{ inputs, outputs, config, pkgs, vars, ... }:
+{
+  inputs,
+  outputs,
+  config,
+  pkgs,
+  vars,
+  ...
+}:
 
 {
   imports = [
@@ -16,6 +23,7 @@
     ./../../modules/nixos/rocm.nix
     ./../../modules/nixos/netbird.nix
     ./../../modules/nixos/yubikey.nix
+
   ];
 
   home-manager = {
@@ -28,6 +36,8 @@
           ./../../modules/home-manager/base.nix
           ./../../modules/home-manager/git.nix
           ./../../modules/home-manager/desktop.nix
+
+          ./../../modules/home-manager/dev/default.nix
         ];
       };
     };
