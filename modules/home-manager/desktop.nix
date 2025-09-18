@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
   lock-false = {
     Value = false;
@@ -8,9 +8,16 @@ let
     Value = true;
     Status = "locked";
   };
+
+  lazyvim = builtins.fetchGit {
+    url = "https://github.com/LazyVim/LazyVim.git";
+    rev = "803bc181d7c0d6d5eeba9274d9be49b287294d99";
+  };
 in {
   programs.vscode.enable = true;
-  programs.neovim.enable = true;
+  programs.neovim = { enable = true; };
+
+  home.file.".config/nvim/lua".source = lazyvim;
 
   home.file.".tmux.conf".source = pkgs.fetchFromGitHub {
     owner = "kajjagtenberg";
