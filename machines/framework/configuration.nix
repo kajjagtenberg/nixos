@@ -21,10 +21,14 @@
     ./../../modules/nixos/laptop.nix
     ./../../modules/nixos/auto-update.nix
     ./../../modules/nixos/rocm.nix
-    ./../../modules/nixos/netbird.nix
 
     ./../../modules/nixos/security
   ];
+
+  security = {
+    netbird.enable = true;
+    yubikey.enable = true;
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs vars; };
