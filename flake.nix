@@ -10,17 +10,20 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs =
+    { self, nixpkgs, ... }@inputs:
     let
       inherit (self) outputs;
       vars = import ./vars.nix;
 
-      mkNixOSConfig = path:
+      mkNixOSConfig =
+        path:
         nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs vars; };
           modules = [ path ];
         };
-    in {
+    in
+    {
       nixosConfigurations = {
         example = mkNixOSConfig ./machines/example/configuration.nix;
         framework = mkNixOSConfig ./machines/framework/configuration.nix;
