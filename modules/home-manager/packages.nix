@@ -25,10 +25,6 @@
       brave
       flyctl
 
-      nil
-      gcc
-      nixfmt
-
       wl-clipboard
     ];
   };
