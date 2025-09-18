@@ -10,7 +10,6 @@
       dig
       dogdns
       fastfetch
-      lazygit
       lazydocker
       zoxide
       xh
