@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: .*/.*
+    key_groups:
+      - age:
+          - age1yubikey1qfgca22ztjk0dv0z959l64r0f7qmmq9m2tencksc4rr6zfczr9cy7ra06z4
+          - age1235fdstpyj2e8mqy68lpm29a3kyghgv078jtxlkpvcya8wnw497ss39cxc
+
