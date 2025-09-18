@@ -29,6 +29,8 @@
       flyctl
 
       nil
+
+      wl-clipboard
     ];
   };
 }
