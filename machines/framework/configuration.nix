@@ -14,16 +14,20 @@
     ./hardware-configuration.nix
 
     ./../../modules/nixos/base.nix
-    ./../../modules/nixos/systemd-boot.nix
     ./../../modules/nixos/docker.nix
     ./../../modules/nixos/gnome.nix
     ./../../modules/nixos/hyprland.nix
-    ./../../modules/nixos/laptop.nix
-    ./../../modules/nixos/auto-update.nix
-    ./../../modules/nixos/rocm.nix
+    # ./../../modules/nixos/laptop.nix
+    # ./../../modules/nixos/rocm.nix
 
+    ./../../modules/nixos/system
     ./../../modules/nixos/security
   ];
+
+  system = {
+    systemd-boot.enable = true;
+    wired.enable = true;
+  };
 
   security = {
     netbird.enable = true;
