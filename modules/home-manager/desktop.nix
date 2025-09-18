@@ -50,18 +50,6 @@ in
     ];
   };
 
-  home.packages = with pkgs; [
-    protonvpn-cli
-    protonvpn-gui
-    spotify
-    parsec-bin
-    protonmail-desktop
-    brave
-    flyctl
-
-    nil
-  ];
-
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
   programs = {
     firefox = {

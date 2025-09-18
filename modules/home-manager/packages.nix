@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home = {
     packages = with pkgs; [
       curl
@@ -18,6 +19,16 @@
       du-dust
       fselect
       tokei
+
+      protonvpn-cli
+      protonvpn-gui
+      spotify
+      parsec-bin
+      protonmail-desktop
+      brave
+      flyctl
+
+      nil
     ];
   };
 }
