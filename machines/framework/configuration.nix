@@ -15,6 +15,7 @@
     ./../../modules/nixos/auto-update.nix
     ./../../modules/nixos/rocm.nix
     ./../../modules/nixos/netbird.nix
+    ./../../modules/nixos/yubikey.nix
   ];
 
   home-manager = {
