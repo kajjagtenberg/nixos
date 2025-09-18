@@ -19,7 +19,6 @@
 
       protonvpn-cli
       protonvpn-gui
-      spotify
       parsec-bin
       protonmail-desktop
       flyctl

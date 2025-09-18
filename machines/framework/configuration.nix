@@ -37,6 +37,7 @@
           ./../../modules/home-manager/desktop.nix
 
           ./../../profiles/dev.nix
+          ./../../profiles/desktop.nix
         ];
       };
     };
