@@ -22,8 +22,8 @@
     ./../../modules/nixos/auto-update.nix
     ./../../modules/nixos/rocm.nix
     ./../../modules/nixos/netbird.nix
-    ./../../modules/nixos/yubikey.nix
 
+    ./../../modules/nixos/security
   ];
 
   home-manager = {
