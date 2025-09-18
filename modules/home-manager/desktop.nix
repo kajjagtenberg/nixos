@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   lock-false = {
     Value = false;
@@ -13,18 +18,23 @@ let
     url = "https://github.com/LazyVim/LazyVim.git";
     rev = "803bc181d7c0d6d5eeba9274d9be49b287294d99";
   };
-in {
+in
+{
   programs.vscode.enable = true;
-  programs.neovim = { enable = true; };
+  programs.neovim = {
+    enable = true;
+  };
 
   # home.file.".config/nvim/lua".source = lazyvim;
 
-  home.file.".tmux.conf".source = pkgs.fetchFromGitHub {
-    owner = "kajjagtenberg";
-    repo = "tmux";
-    rev = "d13ecfe";
-    sha256 = "sha256-O3yHOWlXKvJL+wToO53kSZK09BNGRRx7dk3blMpETXs=";
-  } + "/tmux.conf";
+  home.file.".tmux.conf".source =
+    pkgs.fetchFromGitHub {
+      owner = "kajjagtenberg";
+      repo = "tmux";
+      rev = "d13ecfe";
+      sha256 = "sha256-O3yHOWlXKvJL+wToO53kSZK09BNGRRx7dk3blMpETXs=";
+    }
+    + "/tmux.conf";
 
   programs.tmux = {
     enable = true;
@@ -48,6 +58,8 @@ in {
     protonmail-desktop
     brave
     flyctl
+
+    nil
   ];
 
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
@@ -75,8 +87,7 @@ in {
         OverridePostUpdatePage = "";
         DontCheckDefaultBrowser = true;
         DisplayBookmarksToolbar = "never"; # alternatives: "always" or "newtab"
-        DisplayMenuBar =
-          "default-off"; # alternatives: "always", "never" or "default-on"
+        DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
         SearchBar = "unified"; # alternative: "separate"
 
         # ---- EXTENSIONS ----
@@ -117,22 +128,15 @@ in {
           "browser.search.suggest.enabled.private" = lock-false;
           "browser.urlbar.suggest.searches" = lock-false;
           "browser.urlbar.showSearchSuggestionsFirst" = lock-false;
-          "browser.newtabpage.activity-stream.feeds.section.topstories" =
-            lock-false;
+          "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
           "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includePocket" =
-            lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" =
-            lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" =
-            lock-false;
-          "browser.newtabpage.activity-stream.section.highlights.includeVisited" =
-            lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
+          "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
           "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-          "browser.newtabpage.activity-stream.system.showSponsored" =
-            lock-false;
-          "browser.newtabpage.activity-stream.showSponsoredTopSites" =
-            lock-false;
+          "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
+          "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
         };
       };
     };
@@ -201,11 +205,13 @@ in {
       };
 
       keyboard = {
-        bindings = [{
-          key = "Return";
-          mods = "Shift";
-          chars = "\n";
-        }];
+        bindings = [
+          {
+            key = "Return";
+            mods = "Shift";
+            chars = "\n";
+          }
+        ];
       };
     };
   };
