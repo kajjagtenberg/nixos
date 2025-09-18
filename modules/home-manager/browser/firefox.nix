@@ -4,6 +4,16 @@
   lib,
   ...
 }:
+let
+  lock-false = {
+    Value = false;
+    Status = "locked";
+  };
+  lock-true = {
+    Value = true;
+    Status = "locked";
+  };
+in
 {
   options.browser.enable = lib.mkEnableOption "Enable Firefox";
 
