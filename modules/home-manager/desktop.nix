@@ -17,7 +17,7 @@ in {
   programs.vscode.enable = true;
   programs.neovim = { enable = true; };
 
-  home.file.".config/nvim/lua".source = lazyvim;
+  # home.file.".config/nvim/lua".source = lazyvim;
 
   home.file.".tmux.conf".source = pkgs.fetchFromGitHub {
     owner = "kajjagtenberg";
