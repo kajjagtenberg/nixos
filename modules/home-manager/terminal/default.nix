@@ -21,5 +21,9 @@
       fd.enable = true;
       starship.enable = true;
     };
+
+    home.packages = with pkgs; [
+      zoxide
+    ];
   };
 }

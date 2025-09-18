@@ -11,7 +11,6 @@
       dogdns
       fastfetch
       lazydocker
-      zoxide
       xh
       du-dust
       fselect
