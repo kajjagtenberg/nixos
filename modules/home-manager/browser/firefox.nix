@@ -5,7 +5,7 @@
   ...
 }:
 {
-  config.browser.enable = lib.mkEnableOption "Enable Firefox";
+  options.browser.enable = lib.mkEnableOption "Enable Firefox";
 
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
   config = lib.mkIf config.browser.enable {
