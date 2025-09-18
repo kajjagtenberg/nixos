@@ -6,6 +6,7 @@
 {
   imports = [
     ./neovim.nix
+    ./git.nix
   ];
 
   dev.neovim.enable = lib.mkDefault true;

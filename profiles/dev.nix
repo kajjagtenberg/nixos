@@ -8,4 +8,5 @@
   ];
 
   dev.neovim.enable = true;
+  dev.git.enable = true;
 }
