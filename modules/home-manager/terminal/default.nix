@@ -9,8 +9,6 @@
     ./bash.nix
   ];
 
-  terminal.bash.enable = lib.mkDefault true;
-
   options.terminal.tools.enable = lib.mkEnableOption "Enable terminal tools" // {
     default = true;
   };

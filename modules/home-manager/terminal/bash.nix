@@ -6,7 +6,9 @@
 }:
 {
 
-  options.terminal.bash.enable = lib.mkEnableOption "Enable bash";
+  options.terminal.bash.enable = lib.mkEnableOption "Enable bash" // {
+    default = true;
+  };
 
   config = lib.mkIf config.terminal.bash.enable {
     programs.bash = {
