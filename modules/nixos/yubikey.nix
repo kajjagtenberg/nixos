@@ -3,6 +3,10 @@
     yubioath-flutter
     yubikey-manager
     pam_u2f
+
+    sops
+    age
+    age-plugin-yubikey
   ];
 
   services.udev.packages = [ pkgs.yubikey-personalization ];
