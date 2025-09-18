@@ -24,7 +24,7 @@
         ".." = "cd ..";
       };
       bashrcExtra = lib.mkMerge [
-        ''
+        (lib.mkIf config.dev.neovim.enable ''
           # --- Scratchpad Neovim (Ctrl+n) ---
           open_nvim_scratchpad() {
             nvim
@@ -44,12 +44,10 @@
 
           # Bind it to Ctrl+f
           bind -x '"\C-f":fzf_last_output'
-
-          eval "$(zoxide init bash)"
-        ''
+        '')
         (lib.mkIf config.terminal.tools.enable ''
-          # Only load Starship when terminal tools are enabled
           eval "$(starship init bash)"
+          eval "$(zoxide init bash)"
         '')
       ];
     };
