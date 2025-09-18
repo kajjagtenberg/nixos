@@ -23,30 +23,35 @@
         cat = "bat --style=plain --theme=base16 --paging=never ";
         ".." = "cd ..";
       };
-      bashrcExtra = ''
-        # --- Scratchpad Neovim (Ctrl+n) ---
-        open_nvim_scratchpad() {
-          nvim
-        }
-        bind -x '"\C-n":open_nvim_scratchpad'
+      bashrcExtra = lib.mkMerge [
+        ''
+          # --- Scratchpad Neovim (Ctrl+n) ---
+          open_nvim_scratchpad() {
+            nvim
+          }
+          bind -x '"\C-n":open_nvim_scratchpad'
 
-        # --- Edit current command buffer in Neovim (Ctrl+o) ---
-        export EDITOR=nvim
-        export VISUAL=nvim
-        bind '"\C-o": edit-and-execute-command'
+          # --- Edit current command buffer in Neovim (Ctrl+o) ---
+          export EDITOR=nvim
+          export VISUAL=nvim
+          bind '"\C-o": edit-and-execute-command'
 
-        # Fuzzy search previous command output
-        fzf_last_output() {
-          # Re-run the last command, capture output, pipe to fzf
-          fc -nl -1 | bash | fzf
-        }
+          # Fuzzy search previous command output
+          fzf_last_output() {
+            # Re-run the last command, capture output, pipe to fzf
+            fc -nl -1 | bash | fzf
+          }
 
-        # Bind it to Ctrl+f
-        bind -x '"\C-f":fzf_last_output'
+          # Bind it to Ctrl+f
+          bind -x '"\C-f":fzf_last_output'
 
-        eval "$(starship init bash)"
-        eval "$(zoxide init bash)"
-      '';
+          eval "$(zoxide init bash)"
+        ''
+        (lib.mkIf config.terminal.tools.enable ''
+          # Only load Starship when terminal tools are enabled
+          eval "$(starship init bash)"
+        '')
+      ];
     };
   };
 }
