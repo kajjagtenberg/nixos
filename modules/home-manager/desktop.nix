@@ -22,7 +22,6 @@ in {
   programs.tmux = {
     enable = true;
     baseIndex = 1;
-    paneBaseIndex = 1;
     plugins = with pkgs.tmuxPlugins; [
       sensible
       yank
