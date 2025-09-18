@@ -5,10 +5,8 @@
       curl
       wget
       ripgrep
-      nixfmt
       eza
       bat
-      gcc
       dig
       dogdns
       fastfetch
@@ -18,7 +16,6 @@
       xh
       du-dust
       fselect
-      tokei
 
       protonvpn-cli
       protonvpn-gui
@@ -29,6 +26,8 @@
       flyctl
 
       nil
+      gcc
+      nixfmt
 
       wl-clipboard
     ];

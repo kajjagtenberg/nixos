@@ -18,6 +18,9 @@
     home.packages = with pkgs; [
       fzf
       ripgrep
+      nil
+      gcc
+      nixfmt
     ];
   };
 }
