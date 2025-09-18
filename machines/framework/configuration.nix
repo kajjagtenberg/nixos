@@ -37,10 +37,11 @@
           ./../../modules/home-manager/git.nix
           ./../../modules/home-manager/desktop.nix
 
-          ./../../modules/home-manager/dev/default.nix
+          ./../../profiles/dev.nix
         ];
       };
     };
+
   };
 
   networking.hostName = "framework";

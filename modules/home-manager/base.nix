@@ -1,4 +1,5 @@
-{ vars, ... }: {
+{ vars, ... }:
+{
   imports = [ ./packages.nix ];
 
   home = {
@@ -23,8 +24,7 @@
     bash = {
       enable = true;
       shellAliases = {
-        rebuild =
-          "sudo nixos-rebuild switch --flake github:kajjagtenberg/nixos --refresh";
+        rebuild = "sudo nixos-rebuild switch --flake github:kajjagtenberg/nixos --refresh";
         ga = "git add .";
         gc = "git commit -m ";
         gp = "git push";
