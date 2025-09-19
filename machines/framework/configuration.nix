@@ -49,6 +49,8 @@
 
           ./../../profiles/home/dev.nix
           ./../../profiles/home/desktop.nix
+
+          ../../modules/home-manager/sops.nix
         ];
       };
     };
