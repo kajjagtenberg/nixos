@@ -52,7 +52,20 @@
         ];
       };
     };
+  };
 
+  # Enable sops-nix integration
+  imports = [ pkgs.sops-nix.nixosModules.secrets ];
+
+  # Define the secret
+  sops.secrets = {
+    sshPrivateKey = {
+      source = ./../../secrets/id_ecdsa;
+      target = "/home/${vars.username}/.ssh/id_ecdsa";
+      owner = vars.username;
+      group = vars.username;
+      mode = "0600";
+    };
   };
 
   networking.hostName = "framework";
