@@ -4,8 +4,8 @@
 }:
 {
   imports = [
-    ../modules/home-manager/dev
-    ../modules/home-manager/terminal
+    ../../modules/home-manager/dev
+    ../../modules/home-manager/terminal
   ];
 
   terminal.alacritty.enable = true;
