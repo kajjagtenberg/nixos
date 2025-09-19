@@ -12,5 +12,6 @@
     ./nix.nix
     ./packages.nix
     ./firewall.nix
+    ./openssh.nix
   ];
 }
