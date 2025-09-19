@@ -3,9 +3,9 @@
 }:
 {
   imports = [
-    ../modules/home-manager/browser
-    ../modules/home-manager/apps
-    ../modules/home-manager/terminal
+    ../../modules/home-manager/browser
+    ../../modules/home-manager/apps
+    ../../modules/home-manager/terminal
   ];
 
   browser.brave.enable = true;
