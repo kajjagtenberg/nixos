@@ -11,7 +11,7 @@
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
-      inputs.sops-nix.follows = "nixpkgs";
+      # inputs.sops-nix.follows = "nixpkgs";
     };
   };
 
@@ -25,7 +25,9 @@
         path:
         nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs vars; };
-          modules = [ path ];
+          modules = [
+            path
+          ];
         };
     in
     {
