@@ -11,7 +11,6 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
-    # pkgs.sops-nix.nixosModules.secrets
 
     ./hardware-configuration.nix
 
@@ -52,17 +51,6 @@
           ./../../profiles/home/desktop.nix
         ];
       };
-    };
-  };
-
-  # Define the secret
-  sops.secrets = {
-    sshPrivateKey = {
-      source = ./../../secrets/id_ecdsa;
-      target = "/home/${vars.username}/.ssh/id_ecdsa";
-      owner = vars.username;
-      group = vars.username;
-      mode = "0600";
     };
   };
 
