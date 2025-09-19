@@ -1,5 +1,15 @@
-{ ... }: {
-  programs.hyprland.enable = true;
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
+  options.desktop.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
+
+  config = lib.mkIf config.desktop.hyprland.enable {
+    programs.hyprland.enable = true;
+  };
 
   # TODO: Check if these packages are necessary
   # environment.systemPackages = with pkgs; [
