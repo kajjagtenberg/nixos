@@ -8,5 +8,6 @@
     ./wireless.nix
     ./systemd-boot.nix
     ./users.nix
+    ./locale.nix
   ];
 }
