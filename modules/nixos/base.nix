@@ -7,8 +7,6 @@
   ...
 }:
 {
-  # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
