@@ -35,4 +35,6 @@
   };
 
   networking.hostName = "swrm1";
+
+  system.stateVersion = "25.05";
 }
