@@ -12,6 +12,11 @@ in
     inputs.sops-nix.homeManagerModules.sops
   ];
 
+  home.packages = with pkgs; [
+    sops
+    age-plugin-yubikey
+  ];
+
   sops = {
     age.keyFile = null;
     defaultSopsFile = "${secretsFile}";
