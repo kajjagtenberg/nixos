@@ -14,7 +14,7 @@
     netbird.enable = true;
   };
 
-  ssytem = {
+  system = {
     wired.enable = true;
   };
 }
