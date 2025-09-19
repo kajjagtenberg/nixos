@@ -10,18 +10,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
-  security.sudo.extraRules = [
-    {
-      users = [ vars.username ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

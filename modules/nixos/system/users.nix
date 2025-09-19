@@ -18,4 +18,16 @@
     # shell = pkgs.zsh;
     # hashedPasswordFile = config.sops.secrets."user-password".path;
   };
+
+  security.sudo.extraRules = [
+    {
+      users = [ vars.username ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 }
