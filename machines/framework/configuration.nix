@@ -13,7 +13,6 @@
 
     ./hardware-configuration.nix
 
-    ./../../modules/nixos/base.nix
     # ./../../modules/nixos/laptop.nix
     # ./../../modules/nixos/rocm.nix
 
@@ -57,4 +56,6 @@
   };
 
   networking.hostName = "framework";
+
+  system.stateVersion = "25.05";
 }

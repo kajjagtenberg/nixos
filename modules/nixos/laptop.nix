@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   imports = [
     # ./wireless.nix  TODO: enable for after hardware-configuration is generated
