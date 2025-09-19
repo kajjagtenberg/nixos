@@ -9,5 +9,6 @@
     ./systemd-boot.nix
     ./users.nix
     ./locale.nix
+    ./nix.nix
   ];
 }
