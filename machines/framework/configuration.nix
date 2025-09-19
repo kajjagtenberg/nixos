@@ -31,6 +31,7 @@
   security = {
     netbird.enable = true;
     yubikey.enable = true;
+    fingerprint.enable = true;
   };
 
   services = {
