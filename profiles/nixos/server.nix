@@ -17,4 +17,8 @@
   system = {
     wired.enable = true;
   };
+
+  services = {
+    docker.enable = true;
+  };
 }
