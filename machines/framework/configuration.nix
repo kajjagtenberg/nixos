@@ -45,7 +45,6 @@
       ${vars.username} = {
         imports = [
           ./../../modules/home-manager/base.nix
-          ./../../modules/home-manager/desktop.nix
 
           ./../../profiles/dev.nix
           ./../../profiles/desktop.nix

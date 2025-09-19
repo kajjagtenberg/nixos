@@ -7,6 +7,7 @@
 {
   imports = [
     ./bash.nix
+    ./alacritty.nix
   ];
 
   options.terminal.tools.enable = lib.mkEnableOption "Enable terminal tools" // {
