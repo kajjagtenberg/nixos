@@ -1,4 +1,11 @@
-{ inputs, outputs, config, pkgs, vars, ... }:
+{
+  inputs,
+  outputs,
+  config,
+  pkgs,
+  vars,
+  ...
+}:
 
 {
   imports = [
@@ -6,12 +13,9 @@
 
     ./hardware-configuration.nix
 
-    ./../../modules/nixos/base.nix
-    ./../../modules/nixos/wired.nix
-    ./../../modules/nixos/bootloader.nix
-    ./../../modules/nixos/docker.nix
     ./../../modules/nixos/nfs/docker.nix
-    ./../../modules/nixos/netbird.nix
+
+    ../../profiles/nixos/server.nix
   ];
 
   home-manager = {
@@ -22,11 +26,16 @@
       ${vars.username} = {
         imports = [
           ./../../modules/home-manager/base.nix
-          ./../../modules/home-manager/git.nix
+          # ./../../modules/home-manager/git.nix
+          #
+          ../../modules/home-manager/dev
+          ../../modules/home-manager/terminal
         ];
       };
     };
   };
 
   networking.hostName = "swrm2";
+
+  system.stateVersion = "25.05";
 }
