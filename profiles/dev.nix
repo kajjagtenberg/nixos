@@ -4,7 +4,9 @@
 }:
 {
   imports = [
-    ../modules/home-manager/dev/default.nix
-    ../modules/home-manager/terminal/default.nix
+    ../modules/home-manager/dev
+    ../modules/home-manager/terminal
   ];
+
+  terminal.alacritty.enable = true;
 }
