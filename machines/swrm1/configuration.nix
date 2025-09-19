@@ -29,6 +29,7 @@
           # ./../../modules/home-manager/git.nix
           #
           ../../modules/home-manager/dev
+          ../../modules/home-manager/terminal
         ];
       };
     };
