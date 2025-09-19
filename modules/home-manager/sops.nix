@@ -13,6 +13,7 @@ in
   ];
 
   sops = {
+    age.keyFile = null;
     defaultSopsFile = "${secretsFile}";
 
     secrets = {
