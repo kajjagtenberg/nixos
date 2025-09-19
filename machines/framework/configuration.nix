@@ -11,7 +11,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
-    pkgs.sops-nix.nixosModules.secrets
+    # pkgs.sops-nix.nixosModules.secrets
 
     ./hardware-configuration.nix
 
@@ -48,8 +48,8 @@
         imports = [
           ./../../modules/home-manager/base.nix
 
-          ./../../profiles/dev.nix
-          ./../../profiles/desktop.nix
+          ./../../profiles/home/dev.nix
+          ./../../profiles/home/desktop.nix
         ];
       };
     };
