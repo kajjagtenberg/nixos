@@ -1,23 +1,26 @@
-{ inputs, config, pkgs, vars, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  vars,
+  ...
+}:
+{
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
-  users.users.${vars.username} = {
-    isNormalUser = true;
-    description = vars.username;
-    extraGroups = [ "networkmanager" "wheel" ];
-    openssh.authorizedKeys.keys = vars.sshPublicKeyPersonal;
-    # shell = pkgs.zsh;
-    # hashedPasswordFile = config.sops.secrets."user-password".path;
-  };
-
-  security.sudo.extraRules = [{
-    users = [ vars.username ];
-    commands = [{
-      command = "ALL";
-      options = [ "NOPASSWD" ];
-    }];
-  }];
+  security.sudo.extraRules = [
+    {
+      users = [ vars.username ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -33,7 +36,10 @@
   networking.firewall.enable = false;
   networking.firewall.allowedTCPPorts = [ 22 ];
 
-  environment.systemPackages = with pkgs; [ nfs-utils pciutils ];
+  environment.systemPackages = with pkgs; [
+    nfs-utils
+    pciutils
+  ];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "nl_NL.UTF-8";
@@ -54,7 +60,10 @@
       options = "--delete-older-than 7d";
     };
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       auto-optimise-store = true;
     };
   };
