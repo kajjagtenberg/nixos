@@ -11,6 +11,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
+    pkgs.sops-nix.nixosModules.secrets
 
     ./hardware-configuration.nix
 
@@ -53,9 +54,6 @@
       };
     };
   };
-
-  # Enable sops-nix integration
-  imports = [ pkgs.sops-nix.nixosModules.secrets ];
 
   # Define the secret
   sops.secrets = {
