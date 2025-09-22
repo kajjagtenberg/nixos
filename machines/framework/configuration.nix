@@ -36,8 +36,9 @@
 
   services = {
     docker.enable = true;
-    ollama.enable = true;
   };
+
+  my.services.ollama.enable = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs vars; };
