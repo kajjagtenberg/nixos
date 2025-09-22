@@ -1,2 +1,28 @@
 result
 result/
+
+# Nix
+result-*
+
+# Direnv
+.envrc
+.direnv/
+
+# Secrets (additional to sops)
+*.age
+
+# IDEs/Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*~
