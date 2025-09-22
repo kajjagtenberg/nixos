@@ -7,7 +7,7 @@
 {
   options.services.ollama.enable = lib.mkEnableOption "Enable ollama";
 
-  config = lib.mkIf config.serices.ollama.enable {
+  config = lib.mkIf config.services.ollama.enable {
     services.ollama.enable = true;
   };
 }
