@@ -25,6 +25,7 @@
 
   system = {
     wired.enable = true;
+    systemd-boot.enable = true;
   };
 
   security = {
