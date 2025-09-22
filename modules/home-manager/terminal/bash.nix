@@ -22,6 +22,8 @@
         ll = "ls -lha";
         cat = "bat --style=plain --theme=base16 --paging=never ";
         ".." = "cd ..";
+        t = "tmux";
+        ta = "tmux a";
       };
       bashrcExtra = lib.mkMerge [
         (lib.mkIf config.dev.neovim.enable ''
