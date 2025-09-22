@@ -36,6 +36,7 @@
 
   services = {
     docker.enable = true;
+    ollama.enable = true;
   };
 
   home-manager = {
