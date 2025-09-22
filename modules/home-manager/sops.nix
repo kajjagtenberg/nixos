@@ -21,14 +21,14 @@ in
   ];
 
   sops = {
-    age.keyFile = "${homeDirectory}/.config/sops/age/keys.txt";
+    age.keyFile = "${homeDirectory}/.config/sops/age/keys.txt";  # Will use YubiKey when this file doesn't exist
 
     defaultSopsFile = ../../secrets/ssh.yaml;
     defaultSopsFormat = "yaml";
 
     secrets = {
       "ssh_keys/framework" = {
-        path = "/home/kaj/.ssh/id_ecdsa";
+        path = "${homeDirectory}/.ssh/id_ecdsa";
       };
     };
   };
