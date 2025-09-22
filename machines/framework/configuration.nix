@@ -24,7 +24,6 @@
   ];
 
   system = {
-    systemd-boot.enable = true;
     wired.enable = true;
   };
 
