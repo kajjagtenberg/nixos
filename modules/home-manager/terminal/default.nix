@@ -26,6 +26,7 @@
 
     home.packages = with pkgs; [
       zoxide
+      tokei
     ];
   };
 }
