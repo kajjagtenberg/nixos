@@ -25,8 +25,8 @@
   ];
 
   system = {
-    systemd-boot.enable = true;
     wired.enable = true;
+    systemd-boot.enable = true;
   };
 
   security = {
@@ -38,6 +38,8 @@
   services = {
     docker.enable = true;
   };
+
+  my.services.ollama.enable = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs vars; };
