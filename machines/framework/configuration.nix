@@ -21,7 +21,7 @@
     ./../../modules/nixos/system
     ./../../modules/nixos/security
     ./../../modules/nixos/desktop
-    ./../../modules/nixos/boot/quiet-boot
+    ./../../modules/nixos/boot/quiet-boot.nix
 
   ];
 

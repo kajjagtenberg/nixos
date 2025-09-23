@@ -16,7 +16,7 @@
     ./../../modules/nixos/nfs/docker.nix
 
     ../../profiles/nixos/server.nix
-    ../../modules/nixos/boot/quiet-boot
+    ../../modules/nixos/boot/quiet-boot.nix
   ];
 
   home-manager = {
