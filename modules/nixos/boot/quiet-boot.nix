@@ -16,4 +16,16 @@
   # Hide systemd service status
   systemd.targets.emergency.wants = [ "plymouth-start.service" ];
   systemd.targets.rescue.wants = [ "plymouth-start.service" ];
+
+  # Ensure Plymouth doesn't interfere with suspend
+  systemd.services.plymouth-quit = {
+    description = "Quit Plymouth before suspend";
+    wantedBy = [ "suspend.target" ];
+    before = [ "suspend.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.plymouth}/bin/plymouth quit";
+      RemainAfterExit = true;
+    };
+  };
 }
