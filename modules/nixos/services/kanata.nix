@@ -15,6 +15,10 @@
   };
 
   config = lib.mkIf config.my.services.kanata.enable {
+    hardware.uinput.enable = true;
+
+    users.groups.uinput = { };
+
     services.kanata = {
       enable = true;
       keyboards.default.config = ''
@@ -45,4 +49,3 @@
     };
   };
 }
-
