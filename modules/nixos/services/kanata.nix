@@ -15,28 +15,52 @@
   };
 
   config = lib.mkIf config.my.services.kanata.enable {
-    hardware.uinput.enable = true;
-
-    users.groups.uinput = { };
+    # hardware.uinput.enable = true;
+    #
+    # users.groups.uinput = { };
 
     services.kanata = {
       enable = true;
-      keyboards.default = {
-        extraDefCfg = "process-unmapped-keys yes";
-        config = ''
-          (defsrc
-            caps
-          )
+      keyboards = {
+        default = {
+          # devices = [
+          #   "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
+          # ];
+          extraDefCfg = "process-unmapped-keys yes";
+          config = ''
+            (defsrc
+              caps
+            )
 
-          (defalias
-            caps-mod (tap-hold 100 100 esc lctl)
-          )
+            (defalias
+              caps-mod (tap-hold 100 100 esc lctl)
+            )
 
-          (deflayer base
-            @caps-mod
-          )
-        '';
+            (deflayer base
+              @caps-mod
+            )
+          '';
+        };
       };
+
+      # services.kanata = {
+      #   enable = true;
+      #   keyboards.default = {
+      #     extraDefCfg = "process-unmapped-keys yes";
+      #     config = ''
+      #       (defsrc
+      #         caps
+      #       )
+      #
+      #       (defalias
+      #         caps-mod (tap-hold 100 100 esc lctl)
+      #       )
+      #
+      #       (deflayer base
+      #         @caps-mod
+      #       )
+      #     '';
+      #   };
     };
 
     # users.users.kanata = {
@@ -44,7 +68,10 @@
     # };
 
     users.users.${vars.username} = {
-      extraGroups = [ "uinput" ];
+      extraGroups = [
+        "input"
+        "uinput"
+      ];
     };
   };
 }
