@@ -45,10 +45,6 @@
   my.services.kanata = {
     enable = true;
     config = ''
-      (defcfg
-        process-unmapped-keys yes
-      )
-
       (defsrc
         caps
       )
