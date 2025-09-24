@@ -17,7 +17,19 @@
   config = lib.mkIf config.my.services.kanata.enable {
     services.kanata = {
       enable = true;
-      keyboards.default.config = config.my.services.kanata.config;
+      keyboards.default.config = ''
+        (defsrc
+          caps
+        )
+
+        (defalias
+          caps-mod (tap-hold 100 100 esc lctl)
+        )
+
+        (deflayer base
+          @caps-mod
+        )
+      '';
     };
 
     users.users.${vars.username} = {
@@ -25,3 +37,4 @@
     };
   };
 }
+

@@ -44,19 +44,6 @@
 
   my.services.kanata = {
     enable = true;
-    config = ''
-      (defsrc
-        caps
-      )
-
-      (defalias
-        caps-mod (tap-hold 100 100 esc lctl)
-      )
-
-      (deflayer base
-        @caps-mod
-      )
-    '';
   };
 
   home-manager = {
