@@ -18,6 +18,10 @@
     services.kanata = {
       enable = true;
       keyboards.default.config = ''
+        (defcfg
+          process-unmapped-keys yes
+        )
+
         (defsrc
           caps
         )
@@ -30,6 +34,10 @@
           @caps-mod
         )
       '';
+    };
+
+    users.users.kanata = {
+      extraGroups = [ "uinput" ];
     };
 
     users.users.${vars.username} = {
