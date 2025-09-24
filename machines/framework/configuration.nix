@@ -45,12 +45,20 @@
   my.services.kanata = {
     enable = true;
     config = ''
-      (defcfg)
+      (defcfg
+        process-unmapped-keys yes
+      )
+
       (defsrc
         caps
       )
+
+      (defalias
+        caps-mod (tap-hold 100 100 esc lctl)
+      )
+
       (deflayer base
-        (tap-hold 200 200 esc lctl)
+        @caps-mod
       )
     '';
   };
@@ -72,8 +80,6 @@
       };
     };
   };
-
-
 
   #######
 
