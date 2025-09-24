@@ -42,7 +42,18 @@
 
   my.services.ollama.enable = true;
 
-  my.services.kanata.enable = true;
+  my.services.kanata = {
+    enable = true;
+    config = ''
+      (defcfg)
+      (defsrc
+        caps
+      )
+      (deflayer base
+        (tap-hold 200 200 esc lctl)
+      )
+    '';
+  };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs vars; };
