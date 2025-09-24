@@ -21,19 +21,22 @@
 
     services.kanata = {
       enable = true;
-      keyboards.default.config = ''
-        (defsrc
-          caps
-        )
+      keyboards.default = {
+        extraDefCfg = "process-unmapped-keys yes";
+        config = ''
+          (defsrc
+            caps
+          )
 
-        (defalias
-          caps-mod (tap-hold 100 100 esc lctl)
-        )
+          (defalias
+            caps-mod (tap-hold 100 100 esc lctl)
+          )
 
-        (deflayer base
-          @caps-mod
-        )
-      '';
+          (deflayer base
+            @caps-mod
+          )
+        '';
+      };
     };
 
     # users.users.kanata = {
