@@ -1,4 +1,8 @@
 {
+  pkgs,
+  ...
+}:
+{
   # Quiet boot with Plymouth splash screen
   boot = {
     plymouth.enable = true;
@@ -29,3 +33,4 @@
     };
   };
 }
+
