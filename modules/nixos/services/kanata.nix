@@ -21,7 +21,7 @@
     };
 
     users.users.${vars.username} = {
-      extraGroups = [ "input" ];
+      extraGroups = [ "uinput" ];
     };
   };
 }
