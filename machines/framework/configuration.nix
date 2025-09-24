@@ -42,6 +42,8 @@
 
   my.services.ollama.enable = true;
 
+  my.services.kanata.enable = true;
+
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs vars; };
     useGlobalPkgs = true;
