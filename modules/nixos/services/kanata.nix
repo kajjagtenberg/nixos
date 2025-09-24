@@ -40,9 +40,9 @@
       '';
     };
 
-    users.users.kanata = {
-      extraGroups = [ "uinput" ];
-    };
+    # users.users.kanata = {
+    #   extraGroups = [ "uinput" ];
+    # };
 
     users.users.${vars.username} = {
       extraGroups = [ "uinput" ];
