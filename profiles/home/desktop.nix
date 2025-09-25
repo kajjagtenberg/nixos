@@ -10,5 +10,6 @@
 
   browser.brave.enable = true;
   apps.spotify.enable = true;
+  apps.lmstudio.enable = true;
   terminal.alacritty.enable = true;
 }
