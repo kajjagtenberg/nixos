@@ -21,6 +21,7 @@
       nil
       gcc
       nixfmt
+      zellij
     ];
   };
 }
