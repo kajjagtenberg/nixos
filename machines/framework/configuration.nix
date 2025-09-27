@@ -40,8 +40,6 @@
     docker.enable = true;
   };
 
-  my.services.ollama.enable = true;
-
   my.services.kanata = {
     enable = true;
   };
