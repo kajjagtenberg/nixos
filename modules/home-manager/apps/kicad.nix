@@ -9,7 +9,7 @@
 
   config = lib.mkIf config.apps.kicad.enable {
     home.packages = [
-      pkgs.kicad
+      pkgs.kicad-small
     ];
   };
 }
