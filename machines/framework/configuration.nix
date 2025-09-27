@@ -21,6 +21,7 @@
     ./../../modules/nixos/system
     ./../../modules/nixos/security
     ./../../modules/nixos/desktop
+    ./../../modules/nixos/apps
     ./../../modules/nixos/boot/quiet-boot.nix
 
   ];
@@ -45,6 +46,8 @@
   my.services.kanata = {
     enable = true;
   };
+
+  apps.kicad.enable = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs vars; };
