@@ -63,7 +63,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    openjdk-minimal-jre
+    jre21_minimal
   ];
 
   #######
