@@ -62,6 +62,10 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    openjdk-minimal-jre
+  ];
+
   #######
 
   networking.hostName = "framework";
