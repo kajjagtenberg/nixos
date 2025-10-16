@@ -8,7 +8,6 @@
   imports = [
     ./bash.nix
     ./alacritty.nix
-    ./opencode.nix
   ];
 
   options.terminal.tools.enable = lib.mkEnableOption "Enable terminal tools" // {
