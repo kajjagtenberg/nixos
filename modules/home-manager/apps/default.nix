@@ -6,6 +6,6 @@
     ./spotify.nix
     ./lmstudio.nix
     ./kicad.nix
-    ./bambu.nix
+    ./orca.nix
   ];
 }

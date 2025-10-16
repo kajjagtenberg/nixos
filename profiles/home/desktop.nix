@@ -11,6 +11,6 @@
   browser.brave.enable = true;
   apps.spotify.enable = true;
   apps.kicad.enable = true;
-  apps.bambustudio.enable = true;
+  apps.orca.enable = true;
   terminal.alacritty.enable = true;
 }
