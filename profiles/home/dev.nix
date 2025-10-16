@@ -9,5 +9,4 @@
   ];
 
   terminal.alacritty.enable = true;
-  dev.opencode.enable = true;
 }
