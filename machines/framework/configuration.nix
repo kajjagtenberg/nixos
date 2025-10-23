@@ -67,6 +67,8 @@
   environment.systemPackages = with pkgs; [
     jdk
     onlyoffice-bin # TODO: move to module
+    blender
+    freecad
   ];
 
   #######
