@@ -25,6 +25,7 @@
         t = "tmux";
         ta = "tmux a";
         lg = "lazygit";
+        weather = "curl wttr.in/amersfoort";
       };
       bashrcExtra = lib.mkMerge [
         (lib.mkIf config.dev.neovim.enable ''
