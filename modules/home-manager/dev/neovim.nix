@@ -13,6 +13,10 @@
       enable = true;
       vimAlias = true; # make `vim` point to `nvim`
       viAlias = true; # make `vi` point to `nvim`
+
+      plugins = with pkgs.vimPlugins; [
+        lazy-nvim
+      ];
     };
 
     home.packages = with pkgs; [
