@@ -69,6 +69,7 @@
     onlyoffice-bin # TODO: move to module
     blender
     freecad
+    librecad
   ];
 
   #######
