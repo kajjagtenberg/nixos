@@ -70,6 +70,7 @@
     blender
     freecad
     librecad
+    bottles
   ];
 
   #######
