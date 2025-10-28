@@ -45,6 +45,7 @@
   };
 
   services.flatpak.enable = true;
+  services.snap.enable = true;
 
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs vars; };
