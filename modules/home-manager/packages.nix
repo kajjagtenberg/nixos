@@ -15,7 +15,6 @@
       dust
       fselect
 
-      protonvpn-cli
       protonvpn-gui
       parsec-bin
       protonmail-desktop
