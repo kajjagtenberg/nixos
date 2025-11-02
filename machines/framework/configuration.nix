@@ -64,6 +64,8 @@
     };
   };
 
+  hardware.keyboard.qmk.enable = true;
+
   environment.systemPackages = with pkgs; [
     jdk
     onlyoffice-bin # TODO: move to module
@@ -71,6 +73,8 @@
     freecad
     librecad
     bottles
+
+    qmk
   ];
 
   #######
