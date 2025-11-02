@@ -12,7 +12,7 @@
       fastfetch
       lazydocker
       xh
-      du-dust
+      dust
       fselect
 
       protonvpn-cli
