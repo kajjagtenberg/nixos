@@ -18,7 +18,9 @@
       protonvpn-gui
       parsec-bin
       protonmail-desktop
-      flyctl
+      # flyctl
+      #
+      vial
 
       wl-clipboard
     ];

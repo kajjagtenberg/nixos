@@ -75,7 +75,6 @@
     bottles
 
     qmk
-    vial
   ];
 
   #######
