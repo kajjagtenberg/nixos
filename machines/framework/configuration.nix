@@ -77,6 +77,8 @@
     qmk
   ];
 
+  services.printing.enable = true;
+
   #######
 
   networking.hostName = "framework";
