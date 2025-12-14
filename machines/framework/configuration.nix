@@ -75,6 +75,8 @@
     bottles
 
     qmk
+
+    vscode
   ];
 
   services.printing.enable = true;
