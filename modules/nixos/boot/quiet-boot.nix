@@ -5,7 +5,7 @@
 {
   # Quiet boot with Plymouth splash screen
   boot = {
-    # plymouth.enable = true;
+    plymouth.enable = true;
     consoleLogLevel = 0;
     initrd.verbose = false;
     kernelParams = [
@@ -18,8 +18,8 @@
   };
 
   # Hide systemd service status
-  # systemd.targets.emergency.wants = [ "plymouth-start.service" ];
-  # systemd.targets.rescue.wants = [ "plymouth-start.service" ];
+  systemd.targets.emergency.wants = [ "plymouth-start.service" ];
+  systemd.targets.rescue.wants = [ "plymouth-start.service" ];
 
   # Ensure Plymouth doesn't interfere with suspend
   systemd.services.plymouth-quit = {
