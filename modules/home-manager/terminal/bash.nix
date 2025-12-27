@@ -14,7 +14,8 @@
     programs.bash = {
       enable = true;
       shellAliases = {
-        rebuild = "rebuild_system";
+        # rebuild = "rebuild_system";
+        rebuild = "sudo nixos-rebuild switch --flake github:kajjagtenberg/nixos --refresh";
         ga = "git add .";
         gc = "git commit -m ";
         gp = "git push";
