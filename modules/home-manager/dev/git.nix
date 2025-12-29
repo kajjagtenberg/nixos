@@ -12,6 +12,10 @@
       git = {
         enable = true;
         userName = vars.fullName;
+        settings = {
+          user.name = vars.fullName;
+          user.email = vars.userEmail;
+        };
         inherit (vars) userEmail;
         # extraConfig = {
         #   commit.gpgsign = true;
