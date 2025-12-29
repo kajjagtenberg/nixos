@@ -3,12 +3,11 @@
   pkgs,
   config,
   ...
-}: {
-  options.terminal.bash.enable =
-    lib.mkEnableOption "Enable bash"
-    // {
-      default = true;
-    };
+}:
+{
+  options.terminal.bash.enable = lib.mkEnableOption "Enable bash" // {
+    default = true;
+  };
 
   config = lib.mkIf config.terminal.bash.enable {
     home.packages = with pkgs; [
@@ -61,9 +60,6 @@
         ''
           rebuild_system() {
             set -e
-
-            # Edit your config
-            $EDITOR configuration.nix
 
             # cd to your config dir
             pushd ~/nixos/
