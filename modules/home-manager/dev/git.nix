@@ -4,19 +4,18 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   options.dev.git.enable = lib.mkEnableOption "Enable git";
 
   config = lib.mkIf config.dev.git.enable {
     programs = {
       git = {
         enable = true;
-        userName = vars.fullName;
         settings = {
           user.name = vars.fullName;
           user.email = vars.userEmail;
         };
-        inherit (vars) userEmail;
         # extraConfig = {
         #   commit.gpgsign = true;
         #   gpg.format = "ssh";
