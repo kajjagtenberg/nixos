@@ -11,6 +11,10 @@
   };
 
   config = lib.mkIf config.terminal.bash.enable {
+    home.packages = with pkgs; [
+      alejandra
+    ];
+
     programs.bash = {
       enable = true;
       shellAliases = {
@@ -55,35 +59,42 @@
           eval "$(zoxide init bash)"
         '')
         ''
-          # Enhanced rebuild function with progress indicator
           rebuild_system() {
-            echo "🔄 Starting NixOS rebuild..."
-            local spinner="/-\|"
-            local i=0
-            local log_file="/tmp/nixos-rebuild.log"
+            set -e
 
-            # Start rebuild in background
-            sudo nixos-rebuild switch --flake github:kajjagtenberg/nixos --refresh > "$log_file" 2>&1 &
-            local pid=$!
+            # Edit your config
+            $EDITOR configuration.nix
 
-            # Show spinner while rebuild is running
-            while kill -0 $pid 2>/dev/null; do
-              printf "\r%s Rebuilding system..." "''${spinner:$i:1}"
-              i=$(( (i+1) % 4 ))
-              sleep 0.2
-            done
+            # cd to your config dir
+            pushd ~/nixos/
 
-            # Check if rebuild was successful
-            if wait $pid; then
-              printf "\r✅ Rebuild completed successfully!\n"
-            else
-              printf "\r❌ Rebuild failed!\n"
-              echo "📄 Here's the error output:"
-              echo "----------------------------------------"
-              cat "$log_file"
-              echo "----------------------------------------"
-              return 1
+            # Early return if no changes were detected
+            if git diff --quiet '*.nix'; then
+                echo "No changes detected, exiting."
+                popd
+                exit 0
             fi
+
+            # Autoformat your nix files
+            alejandra . &>/dev/null \
+              || ( alejandra . ; echo "formatting failed!" && exit 1)
+
+            # Shows your changes
+            git diff -U0 '*.nix'
+
+            echo "NixOS Rebuilding..."
+
+            # Rebuild, output simplified errors, log trackebacks
+            sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && exit 1)
+
+            # Get current generation metadata
+            current=$(nixos-rebuild list-generations | grep current)
+
+            # Commit all changes witih the generation metadata
+            git commit -am "$current"
+
+            # Back to where you were
+            popd
           }
         ''
       ];
