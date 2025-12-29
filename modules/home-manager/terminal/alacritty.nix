@@ -3,9 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
-
+}: {
   options.terminal.alacritty.enable = lib.mkEnableOption "Enable alacritty";
 
   config = lib.mkIf config.terminal.alacritty.enable {
@@ -54,7 +52,7 @@
             lines = 30;
             columns = 150;
           };
-          decorations = lib.mkMerge [ "Full" ];
+          decorations = lib.mkMerge ["Full"];
           dynamic_padding = true;
           padding = {
             x = 4;
@@ -64,7 +62,7 @@
         };
 
         font = {
-          size = lib.mkMerge [ 14 ];
+          size = lib.mkMerge [14];
           normal = {
             family = "JetBrainsMono Nerd Font";
             style = "Regular";

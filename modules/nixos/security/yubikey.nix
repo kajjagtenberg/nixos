@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options.security.yubikey.enable = lib.mkEnableOption "Enable yubikey";
   config = lib.mkIf config.security.yubikey.enable {
     environment.systemPackages = with pkgs; [
@@ -17,7 +16,7 @@
       age-plugin-yubikey
     ];
 
-    services.udev.packages = [ pkgs.yubikey-personalization ];
+    services.udev.packages = [pkgs.yubikey-personalization];
     services.pcscd.enable = true;
 
     services.yubikey-agent.enable = true;

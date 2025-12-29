@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options.desktop.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
 
   config = lib.mkIf config.desktop.hyprland.enable {

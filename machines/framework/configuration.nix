@@ -5,9 +5,7 @@
   pkgs,
   vars,
   ...
-}:
-
-{
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
@@ -22,7 +20,6 @@
     ./../../modules/nixos/security
     ./../../modules/nixos/desktop
     ./../../modules/nixos/boot/quiet-boot.nix
-
   ];
 
   system = {
@@ -47,7 +44,7 @@
   services.flatpak.enable = true;
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs vars; };
+    extraSpecialArgs = {inherit inputs outputs vars;};
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {

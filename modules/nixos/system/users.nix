@@ -5,8 +5,7 @@
   lib,
   vars,
   ...
-}:
-{
+}: {
   users.users.${vars.username} = {
     isNormalUser = true;
     description = vars.username;
@@ -21,11 +20,11 @@
 
   security.sudo.extraRules = [
     {
-      users = [ vars.username ];
+      users = [vars.username];
       commands = [
         {
           command = "ALL";
-          options = [ "NOPASSWD" ];
+          options = ["NOPASSWD"];
         }
       ];
     }

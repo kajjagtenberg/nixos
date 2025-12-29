@@ -3,12 +3,12 @@
   pkgs,
   config,
   ...
-}:
-{
-
-  options.terminal.bash.enable = lib.mkEnableOption "Enable bash" // {
-    default = true;
-  };
+}: {
+  options.terminal.bash.enable =
+    lib.mkEnableOption "Enable bash"
+    // {
+      default = true;
+    };
 
   config = lib.mkIf config.terminal.bash.enable {
     home.packages = with pkgs; [

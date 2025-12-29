@@ -1,9 +1,6 @@
-{
-  ...
-}:
-{
+{...}: {
   # networking.firewall.enable = false;
-  networking.firewall.trustedInterfaces = [ "docker0" ];
+  networking.firewall.trustedInterfaces = ["docker0"];
   networking.firewall.enable = false;
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [22];
 }

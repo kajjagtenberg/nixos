@@ -3,14 +3,13 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options.security.fingerprint.enable = lib.mkEnableOption "Enable fingerprint";
 
   config = lib.mkIf config.security.fingerprint.enable {
     # Start the driver at boot
     systemd.services.fprintd = {
-      wantedBy = [ "multi-user.target" ];
+      wantedBy = ["multi-user.target"];
       serviceConfig.Type = "simple";
     };
 

@@ -1,6 +1,5 @@
-{ vars, ... }:
-{
-  imports = [ ./packages.nix ];
+{vars, ...}: {
+  imports = [./packages.nix];
 
   home = {
     username = vars.username;
@@ -14,5 +13,4 @@
     #   SOPS_AGE_KEY_FILE = "$HOME/.config/sops/age/keys.txt";
     # };
   };
-
 }

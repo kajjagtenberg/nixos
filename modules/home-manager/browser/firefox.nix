@@ -3,8 +3,7 @@
   config,
   lib,
   ...
-}:
-let
+}: let
   lock-false = {
     Value = false;
     Status = "locked";
@@ -13,8 +12,7 @@ let
     Value = true;
     Status = "locked";
   };
-in
-{
+in {
   options.browser.enable = lib.mkEnableOption "Enable Firefox";
 
   # inspo: https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
@@ -22,7 +20,7 @@ in
     programs = {
       firefox = {
         enable = true;
-        languagePacks = [ "en-US" ];
+        languagePacks = ["en-US"];
 
         # ---- POLICIES ----
         # Check about:policies#documentation for options.
@@ -98,5 +96,4 @@ in
       };
     };
   };
-
 }

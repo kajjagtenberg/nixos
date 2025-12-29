@@ -3,8 +3,7 @@
   pkgs,
   config,
   ...
-}:
-{
+}: {
   options.dev.neovim.enable = lib.mkEnableOption "Enable neovim";
 
   # === 2. Default configuration (empty if disabled) ===

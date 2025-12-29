@@ -4,13 +4,11 @@
   vars,
   pkgs,
   ...
-}:
-let
+}: let
   secretsDirectory = builtins.toString ./secrets;
   secretsFile = "${secretsDirectory}/ssh.yaml";
   homeDirectory = config.home.homeDirectory;
-in
-{
+in {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
   ];
@@ -21,7 +19,7 @@ in
   ];
 
   sops = {
-    age.keyFile = "${homeDirectory}/.config/sops/age/keys.txt";  # Will use YubiKey when this file doesn't exist
+    age.keyFile = "${homeDirectory}/.config/sops/age/keys.txt"; # Will use YubiKey when this file doesn't exist
 
     defaultSopsFile = ../../secrets/ssh.yaml;
     defaultSopsFormat = "yaml";

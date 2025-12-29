@@ -1,8 +1,4 @@
-{
-  config,
-  ...
-}:
-{
+{config, ...}: {
   imports = [
     ../../modules/home-manager/dev
     ../../modules/home-manager/terminal

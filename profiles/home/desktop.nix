@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+{...}: {
   imports = [
     ../../modules/home-manager/browser
     ../../modules/home-manager/apps

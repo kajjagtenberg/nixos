@@ -3,8 +3,7 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   options.dev.tmux.enable = lib.mkEnableOption "Enable tmux";
 
   config = lib.mkIf config.dev.tmux.enable {

@@ -1,6 +1,8 @@
-{ lib, config, ... }:
 {
-
+  lib,
+  config,
+  ...
+}: {
   options.system.wireless.enable = lib.mkEnableOption "Enable wireless networking";
 
   config = lib.mkIf config.system.wireless.enable {

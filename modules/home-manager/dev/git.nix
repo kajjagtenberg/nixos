@@ -4,8 +4,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   options.dev.git.enable = lib.mkEnableOption "Enable git";
 
   config = lib.mkIf config.dev.git.enable {
@@ -29,7 +28,6 @@
 
     home.packages = with pkgs; [
       lazygit
-
     ];
   };
 }

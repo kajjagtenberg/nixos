@@ -3,8 +3,7 @@
   config,
   vars,
   ...
-}:
-{
+}: {
   options.my.services.kanata = {
     enable = lib.mkEnableOption "Enable kanata keyboard remapping";
     config = lib.mkOption {

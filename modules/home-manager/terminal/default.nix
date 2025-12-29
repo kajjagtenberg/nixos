@@ -3,16 +3,17 @@
   lib,
   config,
   ...
-}:
-{
+}: {
   imports = [
     ./bash.nix
     ./alacritty.nix
   ];
 
-  options.terminal.tools.enable = lib.mkEnableOption "Enable terminal tools" // {
-    default = true;
-  };
+  options.terminal.tools.enable =
+    lib.mkEnableOption "Enable terminal tools"
+    // {
+      default = true;
+    };
 
   config = lib.mkIf config.terminal.tools.enable {
     programs = {
