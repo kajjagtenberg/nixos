@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -20,7 +20,7 @@
     {
       self,
       nixpkgs,
-      nixpkgs-unstable,
+      # nixpkgs-unstable,
       ...
     }@inputs:
     let
