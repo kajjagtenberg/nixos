@@ -5,7 +5,8 @@
   pkgs,
   vars,
   ...
-}: {
+}:
+{
   imports = [
     inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
@@ -44,7 +45,7 @@
   services.flatpak.enable = true;
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs outputs vars;};
+    extraSpecialArgs = { inherit inputs outputs vars; };
     useGlobalPkgs = true;
     useUserPackages = true;
     users = {
@@ -83,6 +84,8 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+
+  services.mullvad-vpn.enable = true;
 
   #######
 
